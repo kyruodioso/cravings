@@ -35,13 +35,11 @@ function App() {
 
   useEffect(() => {
     const obtenerDatos = async () => {
-      console.log(process.env);
 
       const datauri = `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_API_ID}&app_key=${process.env.REACT_APP_API_KEY}`;
 
       const data = await fetch(datauri);
       const traerDatos = await data.json();
-      console.log(traerDatos);
       setLectura(traerDatos.hits);
     };
 
